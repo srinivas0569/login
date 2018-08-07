@@ -1,14 +1,24 @@
-<body>  <form (submit)="loginUser($event)">
-  <div class="input">
-    <label>Username</label>
-    <input type="text"> 
+<div class="x">
+  <div class="col-md-6">
+    <h1>Login </h1>
+    <form>
+	<label for="email">Email Id</label>
+  <input id="email" required minlength="3" pattern="srinivas@gmail.com" type="email" class="form-control" #emailId=ngModel name="email" [(ngModel)]="email">
+  <div *ngIf="emailId.touched && !emailId.valid">
+    <div *ngIf="emailId.errors.required">Email Id is required</div>
+    <div *ngIf="emailId.errors.minlength">minlength=3</div>
+    <div *ngIf="emailId.errors.pattern">pattern not matching</div>
   </div>
-  <div class="input">
-    <label>Password</label>
-    <input type="password"> 
+  <br>
+  <label for="password">Password</label>
+  <input ngModel name="password" id="password" type="password" class="form-control" [(ngModel)]="password" required #passWord=ngModel>
+  <div *ngIf="passWord.touched && !passWord.valid">
+    <div *ngIf="passWord.errors.required">Password is required</div></div>
+  
+  <br>
+  <button class="btn btn-default" (click)="login()">Login</button>
+
+ </form>
   </div>
-  <div class="input">
-    <input type="submit" value="Login"> 
-  </div>
-</form>
-</body>
+</div>
+

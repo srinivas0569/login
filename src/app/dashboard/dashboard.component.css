@@ -1,0 +1,9 @@
+p{
+     flex-grow: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: white;
+     border-radius: 10px;
+     margin:160px;                                      
+}
