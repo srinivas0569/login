@@ -1,0 +1,7 @@
+  <label for="email">Email Id</label>
+  <input id="email" type="email" #emailId=ngModel name="email" [(ngModel)]="email">
+  <br>
+  <button class="btn btn-default" (click)="change(email.value)">Login</button>
+  <p class="life-container" *ngFor="let goal of goals;let i=index"(click)="removeItem(i)">
+    {{ goal }}
+   </p>

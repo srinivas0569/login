@@ -22,7 +22,7 @@ login() {
     alert('sorry enter any values');
   } else if (this.email === 'srinivas@gmail.com' && this.password === 'prasad' ) {
     this.user.setUserLoggedIn();
-    this.router.navigate(['dashboard'] );
+    this.router.navigate(['Todo'] );
     } else {
     alert('Invalid credentials.');
     }

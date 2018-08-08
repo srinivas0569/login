@@ -13,6 +13,7 @@ import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
 import { Login2Component } from './login2/login2.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +25,12 @@ const appRoutes: Routes = [
   path: 'dashboard',
   canActivate: [AuthguardGuard],
   component: DashboardComponent
+  },
+  {
+
+  path: 'Todo',
+  canActivate: [AuthguardGuard],
+  component: TodoComponent
   }
 ];
 @NgModule({
@@ -34,7 +41,8 @@ const appRoutes: Routes = [
     LoginformComponent,
     FooterComponent,
     DashboardComponent,
-    Login2Component
+    Login2Component,
+    TodoComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
